@@ -6,6 +6,12 @@ class Guassian(Distribution):
     """
     Gaussian distribution class for calculating and 
     visualizing as Guassian distribution.
+
+    Attributes:
+        mean(float): the mean valur to the distribution
+        stdef(float): the standard deviation of the distribution
+        datalist(list of floats): a list of floats poins to bre extracted from a data file
+
     """
 
     def __init__(self, mu, sigma):
