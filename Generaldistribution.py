@@ -42,4 +42,4 @@ class Distribution:
             
         file.close()
 
-        line = file.append()
+        self.data = data_list
