@@ -23,6 +23,13 @@ class Binomial(Distribution):
 
     def calculate_mean(self):
         """
+        Calculate the mean from p and n
+
+        Args:
+            none
+
+        Returns:
+            mean(float): mean of the data set
         """
 
         self.mean = self.p * self.n
@@ -31,13 +38,28 @@ class Binomial(Distribution):
     
     def calculate_stdev(self):
         """
+        Calculate the standard deviation from p and n
+
+        Args:
+            none
+        Returns:
+            stdev(float): standard deviation from the data set
         """
+
         self.stdev = math.sqrt(self.n * self.p * (1-self.p))
 
         return self.stdev
 
     def replace_stats_with_data(self):
         """
+        To calculate the p and n from the data set 
+
+        Args:
+            none
+
+        Returns:
+            none
+
         """
         self.n = len(self.data)
         self.p = 1.0 * sum (self.data) / len(self.data)
@@ -49,6 +71,15 @@ class Binomial(Distribution):
 
     def plot_bar(self):
         """
+        Output a histogram of the instance variable data using matplolib pyplot 
+        library.
+
+        Args:
+            none
+
+        Returns:
+            none
+
         """
 
         plt.bar( x = [], height= [(1 -self.p) *self.n, self.p * self.n])
@@ -60,6 +91,14 @@ class Binomial(Distribution):
 
     def pdf(self):
         """
+        Probability density function calculator for the binomila distribution. 
+
+        Args:
+            none
+            
+        Returns:
+            y (float): y values to the pdf plot
+            x (float): x values to the pdf plot
         """
 
         a = math.factorial(self.n) / (math.factorial(k) * (math.factorial(self.n - k)))
@@ -69,6 +108,11 @@ class Binomial(Distribution):
 
     def plot_bar_pdf(self):
         """
+
+        Args:
+
+        Returns:
+        
         """
         x = []
         y = []
