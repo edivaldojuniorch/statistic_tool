@@ -24,11 +24,19 @@ class Guassian(Distribution):
 
     def calculate_stdev(self, sample=True):
         """
+        Calculate the standard deviatino of the data set.
+
+        Args:
+            sample (bool): wheter the data represents a sample or population
+
+        Returns:
+            sigma (float): standard deviation of the data set
+
         """
         if sample:
-            n = len() - 1
+            n = len(self.data) - 1
         else:
-            n = len()
+            n = len(self.data)
 
         mean = self.calculate_mean()
 
@@ -38,7 +46,7 @@ class Guassian(Distribution):
         
         self.stdev = sigma 
 
-        return self.stdev
+        return sigma
 
 
 
@@ -77,6 +85,14 @@ class Guassian(Distribution):
     def plot_histogram(self):
         
         """
+        To output a histogram of the instance variable data using matplotlib
+        pyplot library.
+
+        Args:
+            None
+
+        Returns:
+            None
         """
 
         plt.hist(self.data)
@@ -87,6 +103,14 @@ class Guassian(Distribution):
     
     def pdf(self, x):
         """
+        Probability density function calculator for gaussian distribution.
+
+        Args:
+            x (float): point for calculating the probability density function
+
+        Returns:
+            pdf_out (float):probality density function
+
         """
 
         return (1.0 / self.stdev * math.sqrt(2*math.pi)) * math.exp(-0.5*((x-self.mean)/self.stdev)**2)
@@ -94,6 +118,16 @@ class Guassian(Distribution):
     def plot_histogram_pdf(self, n_spaces=50):
 
         """
+        Plot the normalized histogram of the data and a plot of the probability
+        density function along the same range.
+
+        Args:
+            n_spaces (int): number of data points
+
+        Returns:
+            x (list) values for the pdf plot
+            y (list) values for the pdf plot
+        
         """
         mu = self.mean
         sigma = self.stdev 
