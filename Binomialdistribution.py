@@ -136,15 +136,21 @@ class Binomial(Distribution):
         """
         """
 
-        result = Guassian()
-        result.mean = self.mean + other.mean
-        result.stdev = math.sqrt(math.pow(self.stdev,2) + math.pow(other.stdev,2))
-    
+        result = Binomial()
+        result.n = self.n + other.n
+        result.p = self.p
+        result.calculate_mean()
+        result.calculate_stdev()
+
+
         return result
 
     def __repr__(self):
         """
         """
 
-        return "mean {}, standard deviation {}".format(self.mean, self.stdev)
+        return "mean {}, standard deviation {}, p {}, n {}".\
+            format(self.mean, self.stdev, self.p, self.n)
+
+
 
