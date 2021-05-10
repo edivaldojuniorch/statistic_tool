@@ -95,7 +95,7 @@ class Binomial(Distribution):
 
         Args:
             none
-            
+
         Returns:
             y (float): y values to the pdf plot
             x (float): x values to the pdf plot
@@ -131,4 +131,20 @@ class Binomial(Distribution):
         plt.show()
 
         return x, y
+
+    def __add__(self, other):
+        """
+        """
+
+        result = Guassian()
+        result.mean = self.mean + other.mean
+        result.stdev = math.sqrt(math.pow(self.stdev,2) + math.pow(other.stdev,2))
+    
+        return result
+
+    def __repr__(self):
+        """
+        """
+
+        return "mean {}, standard deviation {}".format(self.mean, self.stdev)
 
