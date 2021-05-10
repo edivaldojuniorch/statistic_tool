@@ -170,6 +170,13 @@ class Guassian(Distribution):
 
     def __add__(self, other):
         """
+        It implements sum operation from two Guassian distributions with equial p
+
+        Args: 
+            other (Guassian): a Guassian Instance
+        Returns:
+            Guassian: a new instance from Guassian distribution, result from addition
+
         """
 
         result = Guassian()
@@ -180,8 +187,15 @@ class Guassian(Distribution):
 
     def __repr__(self):
         """
-        """
+        Output the characteristics of the Guassian Instance
 
+        Args:
+            none
+            
+        Returns:
+            none
+
+        """
         return "mean {}, standard deviation {}".format(self.mean, self.stdev)
 
 
