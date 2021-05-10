@@ -168,5 +168,21 @@ class Guassian(Distribution):
 
         return x, y
 
+    def __add__(self, other):
+        """
+        """
+
+        result = Guassian()
+        result.mean = self.mean + other.mean
+        result.stdev = math.sqrt(math.pow(self.stdev,2) + math.pow(other.stdev,2))
     
+        return result
+
+    def __repr__(self):
+        """
+        """
+
+        return "mean {}, standard deviation {}".format(self.mean, self.stdev)
+
+
     
