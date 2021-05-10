@@ -134,8 +134,14 @@ class Binomial(Distribution):
 
     def __add__(self, other):
         """
-        """
+        It implements sum operation from two Binomial distributions with equial p
 
+        Args: 
+            other (Binomial): a Binomial Instance
+        Returns:
+            Binomial: a new instance from Binomial distribution, result from addition
+
+        """
         result = Binomial()
         result.n = self.n + other.n
         result.p = self.p
@@ -147,6 +153,14 @@ class Binomial(Distribution):
 
     def __repr__(self):
         """
+        Output the characteristics of the Binomial Instance
+
+        Args:
+            none
+            
+        Returns:
+            none
+
         """
 
         return "mean {}, standard deviation {}, p {}, n {}".\
